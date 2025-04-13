@@ -8,6 +8,7 @@ This solution helps manage multiple Git accounts (work and personal) on the same
    - Mount your local filesystem to access your Git repositories
    - Use specific SSH keys based on which account you want to use
    - Configure Git with the appropriate user name and email
+   - Include tools like lazygit for improved Git workflow
 
 2. You can switch between Git accounts by simply using different aliases.
 
@@ -104,6 +105,12 @@ This also launches a Docker container with your personal Git credentials. Exit u
   git-work git clone git@git-server:work-org/project.git
   ```
   In this case, the container will automatically exit after executing the command.
+
+- **Lazygit TUI**: The containers include lazygit, a terminal UI for Git:
+  ```bash
+  git-work lazygit
+  ```
+  This provides an interactive interface for managing your Git repositories.
 
 ## Troubleshooting
 
