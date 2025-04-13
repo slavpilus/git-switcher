@@ -116,10 +116,10 @@ This also launches a Docker container with your personal Git credentials. Exit u
 
 1. **SSH Key Permissions**: If you encounter permission issues, make sure your SSH keys have the correct permissions:
    ```bash
-   chmod 600 ~/ssh-keys/work/id_rsa
-   chmod 644 ~/ssh-keys/work/id_rsa.pub
-   chmod 600 ~/ssh-keys/personal/id_rsa
-   chmod 644 ~/ssh-keys/personal/id_rsa.pub
+   chmod 600 ssh-keys/work/id_rsa
+   chmod 644 ssh-keys/work/id_rsa.pub
+   chmod 600 ssh-keys/personal/id_rsa
+   chmod 644 ssh-keys/personal/id_rsa.pub
    ```
 
 2. **SSH Connection Issues**: To test the SSH connection within the container:
