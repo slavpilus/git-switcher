@@ -22,7 +22,7 @@ This solution helps manage multiple Git accounts (work and personal) on the same
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/git-switcher.git
+   git clone https://github.com/slavpilus/git-switcher.git
    cd git-switcher
    ```
 
@@ -36,7 +36,7 @@ This solution helps manage multiple Git accounts (work and personal) on the same
    ./setup.sh
    ```
 
-4. Copy your SSH keys to the directories created by the setup script:
+4. Copy your SSH keys to the directories created by the setup script (adjust to match your SSH keys names):
    - Work SSH keys:
      ```bash
      cp ~/.ssh/id_rsa_work ~/ssh-keys/work/id_rsa
@@ -48,7 +48,14 @@ This solution helps manage multiple Git accounts (work and personal) on the same
      cp ~/.ssh/id_rsa_personal.pub ~/ssh-keys/personal/id_rsa.pub
      ```
 
-5. Edit the `git-aliases.sh` file to update with your actual Git user names and emails.
+5. Configure your Git account information:
+   ```bash
+   # Copy the template
+   cp .env.example .env
+   
+   # Edit with your actual details
+   nano .env
+   ```
 
 6. Add the aliases to your shell configuration:
    ```bash
@@ -84,7 +91,6 @@ git-personal
 
 ### Additional Features
 
-- **Custom SSH Config**: You can also place an SSH config file in each ssh-keys directory to handle more complex setups.
 - **One-off Git Commands**: You can also run one-off commands like:
   ```bash
   git-work git clone git@git-server:work-org/project.git

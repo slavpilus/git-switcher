@@ -1,14 +1,21 @@
-# GitHub Account Switcher Aliases
-alias github-work='docker run -it --rm \
-  -e GIT_USER_NAME="Your Work Name" \
-  -e GIT_USER_EMAIL="your.work.email@company.com" \
+ENV_FILE=".env"
+if [ -f "$ENV_FILE" ]; then
+  source "$ENV_FILE"
+else
+  echo "Error: $ENV_FILE not found. Exiting..."
+  exit 1
+fi
+
+alias git-work='docker run -it --rm \
+  -e GIT_USER_NAME="$WORK_GIT_NAME" \
+  -e GIT_USER_EMAIL="$WORK_GIT_EMAIL" \
   -v $(pwd):/git-workspace \
   -v $HOME/ssh-keys/work:/ssh-keys \
-  github-account-switcher'
+  git-account-switcher'
 
-alias github-personal='docker run -it --rm \
-  -e GIT_USER_NAME="Your Personal Name" \
-  -e GIT_USER_EMAIL="your.personal.email@gmail.com" \
+alias git-personal='docker run -it --rm \
+  -e GIT_USER_NAME="$PERSONAL_GIT_NAME" \
+  -e GIT_USER_EMAIL="$PERSONAL_GIT_EMAIL" \
   -v $(pwd):/git-workspace \
   -v $HOME/ssh-keys/personal:/ssh-keys \
-  github-account-switcher'
+  git-account-switcher'
