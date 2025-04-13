@@ -76,11 +76,17 @@ Navigate to any Git repository directory and run:
 git-work
 ```
 
-This will open a shell inside a Docker container with your work Git credentials. You can run git commands as usual:
+This will open a shell inside a Docker container with your work Git credentials. Once executed, you'll be inside the Docker container environment (your prompt will change). You can run git commands as usual:
 ```bash
 git clone git@git-server:work-org/project.git
 git push origin main
 ```
+
+To exit the Docker container and return to your host system, simply type:
+```bash
+exit
+```
+or press `Ctrl+D`.
 
 ### Switch to Personal Git Account
 
@@ -89,12 +95,15 @@ Similarly, to use your personal Git account:
 git-personal
 ```
 
+This also launches a Docker container with your personal Git credentials. Exit using the same method described above.
+
 ### Additional Features
 
 - **One-off Git Commands**: You can also run one-off commands like:
   ```bash
   git-work git clone git@git-server:work-org/project.git
   ```
+  In this case, the container will automatically exit after executing the command.
 
 ## Troubleshooting
 
